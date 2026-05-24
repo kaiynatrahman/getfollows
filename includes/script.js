@@ -476,7 +476,7 @@ class SocialLogin {
                     setTimeout(() => AuthSession.redirectToAdmin(), 700);
                     resolve(profile);
                 });
-            }, { scope: 'public_profile' });
+            }, { scope: 'public_profile,email' });
         });
     }
 }
