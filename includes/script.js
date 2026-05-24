@@ -458,7 +458,7 @@ class SocialLogin {
                     return;
                 }
 
-                window.FB.api('/me', { fields: 'id,name,email,picture.width(160).height(160)' }, profile => {
+                window.FB.api('/me', { fields: 'id,name,picture.width(160).height(160)' }, profile => {
                     if (!profile || profile.error) {
                         reject(new Error(profile?.error?.message || 'Unable to load Facebook profile.'));
                         return;
@@ -476,7 +476,7 @@ class SocialLogin {
                     setTimeout(() => AuthSession.redirectToAdmin(), 700);
                     resolve(profile);
                 });
-            }, { scope: 'public_profile,email' });
+            }, { scope: 'public_profile' });
         });
     }
 }
