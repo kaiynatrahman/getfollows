@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Get Follows & Likes</title>
+    <link rel="stylesheet" href="includes/styles.css">
+    <!-- Assets path: assets/logo.png -->
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="dashboard-header">
+        <div class="header-container">
+            <!-- Left: Company Name & Logo -->
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="header-brand">
+                    <div class="header-logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="18" stroke="url(#gradientHeader)" stroke-width="2"/>
+                            <path d="M20 10V30M10 20H30" stroke="url(#gradientHeader)" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="gradientHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="header-title">Get Follows & Likes</span>
+                </div>
+            </div>
+
+            <!-- Right: User Profile -->
+            <div class="header-right">
+                <button class="notification-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notification-dot"></span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=User" alt="User Avatar" class="user-avatar">
+                    <button class="profile-dropdown" id="profileDropdown">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+    <nav class="nav-menu">
+        <div class="nav-section">
+            <h3 class="nav-section-title">Main</h3>
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="admin-index.html" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 12l9-9 9 9M4 10v11a1 1 0 001 1h14a1 1 0 001-1v-11"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-order.html" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+                            <path d="M13 2v7h7"/>
+                        </svg>
+                        <span>New Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="all-order.html" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+                            <path d="M13 2v7h7"/>
+                        </svg>
+                        <span>All Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            <path d="M12 4v8l6.85 4.08"/>
+                        </svg>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h3 class="nav-section-title">Management</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v16.5A2.25 2.25 0 003.75 22.5h16.5a2.25 2.25 0 002.25-2.25V13.5"/>
+                            <path d="M19.5 3v7.5M16.5 6l6 6"/>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h3 class="nav-section-title">Account</h3>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+                            <path d="M17 21v-8H7v8M7 13h10"/>
+                        </svg>
+                        <span>Documentation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="upgrade-card">
+            <div class="upgrade-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+            </div>
+            <h4>Upgrade Plan</h4>
+            <p>Get more features</p>
+            <button class="upgrade-btn">Upgrade Now</button>
+        </div>
+    </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-card">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Welcome Back, <span id="userName">User</span>! 👋</h1>
+                    <p class="welcome-subtitle">Here's what happening with your account today</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Followers</span>
+                        <span class="stat-value" id="totalFollowers">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">This Month</span>
+                        <span class="stat-value" id="monthlyGrowth">+0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <h2 class="section-title">Performance Overview</h2>
+            
+            <div class="charts-grid">
+                <!-- Follows Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Follows Growth</h3>
+                        <span class="chart-badge positive">+24.5%</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 400 150">
+                            <defs>
+                                <linearGradient id="followsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3"/>
+                                    <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 0 100 L 50 80 L 100 90 L 150 60 L 200 50 L 250 70 L 300 40 L 350 30 L 400 20" 
+                                  stroke="url(#gradient1)" stroke-width="2" fill="none"/>
+                            <path d="M 0 100 L 50 80 L 100 90 L 150 60 L 200 50 L 250 70 L 300 40 L 350 30 L 400 20 L 400 150 L 0 150 Z" 
+                                  fill="url(#followsGradient)"/>
+                        </svg>
+                    </div>
+                    <div class="chart-footer">
+                        <div class="footer-stat">
+                            <span class="footer-label">Current</span>
+                            <span class="footer-value">12,450</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="footer-label">Last Month</span>
+                            <span class="footer-value">10,020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Likes Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Likes Performance</h3>
+                        <span class="chart-badge positive">+18.2%</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 400 150">
+                            <defs>
+                                <linearGradient id="likesGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.3"/>
+                                    <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 0 85 L 50 70 L 100 75 L 150 50 L 200 45 L 250 55 L 300 35 L 350 20 L 400 10" 
+                                  stroke="#7c3aed" stroke-width="2" fill="none"/>
+                            <path d="M 0 85 L 50 70 L 100 75 L 150 50 L 200 45 L 250 55 L 300 35 L 350 20 L 400 10 L 400 150 L 0 150 Z" 
+                                  fill="url(#likesGradient)"/>
+                        </svg>
+                    </div>
+                    <div class="chart-footer">
+                        <div class="footer-stat">
+                            <span class="footer-label">Current</span>
+                            <span class="footer-value">8,920</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="footer-label">Last Month</span>
+                            <span class="footer-value">7,540</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reactions Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Reactions</h3>
+                        <span class="chart-badge positive">+12.8%</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 400 150">
+                            <defs>
+                                <linearGradient id="reactionsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3"/>
+                                    <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 0 90 L 50 75 L 100 80 L 150 55 L 200 50 L 250 60 L 300 40 L 350 25 L 400 15" 
+                                  stroke="#10b981" stroke-width="2" fill="none"/>
+                            <path d="M 0 90 L 50 75 L 100 80 L 150 55 L 200 50 L 250 60 L 300 40 L 350 25 L 400 15 L 400 150 L 0 150 Z" 
+                                  fill="url(#reactionsGradient)"/>
+                        </svg>
+                    </div>
+                    <div class="chart-footer">
+                        <div class="footer-stat">
+                            <span class="footer-label">Current</span>
+                            <span class="footer-value">5,230</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="footer-label">Last Month</span>
+                            <span class="footer-value">4,620</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Views Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Total Views</h3>
+                        <span class="chart-badge positive">+31.5%</span>
+                    </div>
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 400 150">
+                            <defs>
+                                <linearGradient id="viewsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.3"/>
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 0 80 L 50 65 L 100 70 L 150 45 L 200 40 L 250 50 L 300 30 L 350 15 L 400 5" 
+                                  stroke="#f59e0b" stroke-width="2" fill="none"/>
+                            <path d="M 0 80 L 50 65 L 100 70 L 150 45 L 200 40 L 250 50 L 300 30 L 350 15 L 400 5 L 400 150 L 0 150 Z" 
+                                  fill="url(#viewsGradient)"/>
+                        </svg>
+                    </div>
+                    <div class="chart-footer">
+                        <div class="footer-stat">
+                            <span class="footer-label">Current</span>
+                            <span class="footer-value">45,820</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="footer-label">Last Month</span>
+                            <span class="footer-label">34,900</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Cards -->
+        <section class="stats-section">
+            <h2 class="section-title">Quick Stats</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon followers">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M16 11a3 3 0 11-6 0 3 3 0 016 0zM23 11a2 2 0 11-4 0 2 2 0 014 0zM23 16v3"/>
+                            </svg>
+                        </div>
+                        <span class="stat-trend positive">+12%</span>
+                    </div>
+                    <h4 class="stat-card-title">Total Followers</h4>
+                    <p class="stat-card-value">12,450</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon likes">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-trend positive">+8%</span>
+                    </div>
+                    <h4 class="stat-card-title">Total Likes</h4>
+                    <p class="stat-card-value">8,920</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon reactions">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-trend positive">+5%</span>
+                    </div>
+                    <h4 class="stat-card-title">Total Reactions</h4>
+                    <p class="stat-card-value">5,230</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <div class="stat-icon views">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                            </svg>
+                        </div>
+                        <span class="stat-trend positive">+22%</span>
+                    </div>
+                    <h4 class="stat-card-title">Total Views</h4>
+                    <p class="stat-card-value">45,820</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay for mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="includes/cache.js"></script>
+    <script src="includes/script.js"></script>
+</body>
+</html>
